@@ -30,6 +30,7 @@ clean:
 	make -C axi_ad9739a clean
 	make -C axi_ad9963 clean
 	make -C axi_adc_decimate clean
+	make -C axi_adc_jesd204 clean
 	make -C axi_adc_trigger clean
 	make -C axi_clkgen clean
 	make -C axi_dac_interpolate clean
@@ -122,6 +123,7 @@ lib:
 	make -C axi_ad9739a
 	make -C axi_ad9963
 	make -C axi_adc_decimate
+	make -C axi_adc_jesd204
 	make -C axi_adc_trigger
 	make -C axi_clkgen
 	make -C axi_dac_interpolate

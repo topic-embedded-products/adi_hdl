@@ -25,9 +25,13 @@ add_fileset_file up_delay_cntrl.v     VERILOG PATH $ad_hdl_dir/library/common/up
 add_fileset_file up_adc_common.v      VERILOG PATH $ad_hdl_dir/library/common/up_adc_common.v
 add_fileset_file up_adc_channel.v     VERILOG PATH $ad_hdl_dir/library/common/up_adc_channel.v
 add_fileset_file ad_xcvr_rx_if.v      VERILOG PATH $ad_hdl_dir/library/common/ad_xcvr_rx_if.v
-add_fileset_file axi_ad9250_pnmon.v   VERILOG PATH axi_ad9250_pnmon.v
-add_fileset_file axi_ad9250_if.v      VERILOG PATH axi_ad9250_if.v
-add_fileset_file axi_ad9250_channel.v VERILOG PATH axi_ad9250_channel.v
+
+add_fileset_file axi_adc_jesd204_pnmon.v   VERILOG PATH $ad_hdl_dir/library/axi_adc_jesd204/axi_adc_jesd204_pnmon.v
+add_fileset_file axi_adc_jesd204_channel.v VERILOG PATH $ad_hdl_dir/library/axi_adc_jesd204/axi_adc_jesd204_channel.v
+add_fileset_file axi_adc_jesd204_core.v    VERILOG PATH $ad_hdl_dir/library/axi_adc_jesd204/axi_adc_jesd204_core.v
+add_fileset_file axi_adc_jesd204_if.v      VERILOG PATH $ad_hdl_dir/library/axi_adc_jesd204/axi_adc_jesd204_if.v
+add_fileset_file axi_adc_jesd204.v         VERILOG PATH $ad_hdl_dir/library/axi_adc_jesd204/axi_adc_jesd204.v
+
 add_fileset_file axi_ad9250.v         VERILOG PATH axi_ad9250.v TOP_LEVEL_FILE
 add_fileset_file up_xfer_cntrl_constr.sdc   SDC PATH  $ad_hdl_dir/library/altera/common/up_xfer_cntrl_constr.sdc
 add_fileset_file up_xfer_status_constr.sdc  SDC PATH  $ad_hdl_dir/library/altera/common/up_xfer_status_constr.sdc

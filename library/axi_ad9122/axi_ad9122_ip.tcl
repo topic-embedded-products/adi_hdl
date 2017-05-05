@@ -33,7 +33,6 @@ adi_ip_properties axi_ad9122
 
 set_property driver_value 0 [ipx::get_ports *dac_sync_in* -of_objects [ipx::current_core]]
 set_property driver_value 0 [ipx::get_ports *dunf* -of_objects [ipx::current_core]]
-set_property driver_value 0 [ipx::get_ports *dovf* -of_objects [ipx::current_core]]
 
 ipx::save_core [ipx::current_core]
 

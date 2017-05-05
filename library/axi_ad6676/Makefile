@@ -5,15 +5,6 @@
 ####################################################################################
 ####################################################################################
 
-M_DEPS += ../common/ad_pnmon.v
-M_DEPS += ../common/ad_rst.v
-M_DEPS += ../common/ad_xcvr_rx_if.v
-M_DEPS += ../common/up_adc_channel.v
-M_DEPS += ../common/up_adc_common.v
-M_DEPS += ../common/up_axi.v
-M_DEPS += ../common/up_clock_mon.v
-M_DEPS += ../common/up_xfer_cntrl.v
-M_DEPS += ../common/up_xfer_status.v
 M_DEPS += ../scripts/adi_env.tcl
 M_DEPS += ../scripts/adi_ip.tcl
 M_DEPS += ../xilinx/common/ad_rst_constr.xdc
@@ -21,10 +12,9 @@ M_DEPS += ../xilinx/common/up_clock_mon_constr.xdc
 M_DEPS += ../xilinx/common/up_xfer_cntrl_constr.xdc
 M_DEPS += ../xilinx/common/up_xfer_status_constr.xdc
 M_DEPS += axi_ad6676.v
-M_DEPS += axi_ad6676_channel.v
-M_DEPS += axi_ad6676_if.v
 M_DEPS += axi_ad6676_ip.tcl
-M_DEPS += axi_ad6676_pnmon.v
+
+M_DEPS += ../axi_adc_jesd204/axi_adc_jesd204.xpr
 
 M_VIVADO := vivado -mode batch -source
 
@@ -43,8 +33,8 @@ M_FLIST += .Xil
 
 
 
-.PHONY: all clean clean-all
-all: axi_ad6676.xpr
+.PHONY: all dep clean clean-all
+all: dep axi_ad6676.xpr
 
 
 clean:clean-all
@@ -58,5 +48,7 @@ axi_ad6676.xpr: $(M_DEPS)
 	-rm -rf $(M_FLIST)
 	$(M_VIVADO) axi_ad6676_ip.tcl  >> axi_ad6676_ip.log 2>&1
 
+dep:
+	make -C ../axi_adc_jesd204/
 ####################################################################################
 ####################################################################################

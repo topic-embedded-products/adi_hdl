@@ -34,6 +34,7 @@ clean:
 	make -C axi_adc_trigger clean
 	make -C axi_clkgen clean
 	make -C axi_dac_interpolate clean
+	make -C axi_dac_jesd204 clean
 	make -C axi_dmac clean
 	make -C axi_fmcadc5_sync clean
 	make -C axi_generic_adc clean
@@ -127,6 +128,7 @@ lib:
 	make -C axi_adc_trigger
 	make -C axi_clkgen
 	make -C axi_dac_interpolate
+	make -C axi_dac_jesd204
 	make -C axi_dmac
 	make -C axi_fmcadc5_sync
 	make -C axi_generic_adc

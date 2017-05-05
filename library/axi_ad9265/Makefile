@@ -26,7 +26,6 @@ M_DEPS += ../xilinx/common/up_xfer_cntrl_constr.xdc
 M_DEPS += ../xilinx/common/up_xfer_status_constr.xdc
 M_DEPS += axi_ad9265.v
 M_DEPS += axi_ad9265_channel.v
-M_DEPS += axi_ad9265_constr.xdc
 M_DEPS += axi_ad9265_if.v
 M_DEPS += axi_ad9265_ip.tcl
 M_DEPS += axi_ad9265_pnmon.v

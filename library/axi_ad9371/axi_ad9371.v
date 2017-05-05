@@ -81,7 +81,6 @@ module axi_ad9371 #(
   output                  adc_valid_q1,
   output      [ 15:0]     adc_data_q1,
   input                   adc_dovf,
-  input                   adc_dunf,
 
   output                  adc_os_enable_i0,
   output                  adc_os_valid_i0,
@@ -220,7 +219,6 @@ module axi_ad9371 #(
     .adc_valid_q1 (adc_valid_q1),
     .adc_data_q1 (adc_data_q1),
     .adc_dovf (adc_dovf),
-    .adc_dunf (adc_dunf),
     .up_rstn (up_rstn),
     .up_clk (up_clk),
     .up_wreq (up_wreq_s),

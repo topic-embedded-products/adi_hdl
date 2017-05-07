@@ -151,7 +151,11 @@ module axi_adc_jesd204_core #(
   // common processor control
 
   up_adc_common #(
-    .ID(ID)
+    .ID(ID),
+    .DRP_DISABLE(1),
+    .USERPORTS_DISABLE(1),
+    .GPIO_DISABLE(1),
+    .START_CODE_DISABLE(1)
   ) i_up_adc_common (
     .mmcm_rst (),
     .adc_clk (adc_clk),

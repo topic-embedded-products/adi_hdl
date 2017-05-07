@@ -97,7 +97,10 @@ module axi_adc_jesd204_channel #(
   endgenerate
 
   up_adc_channel #(
-    .CHANNEL_ID(CHANNEL_ID)
+    .CHANNEL_ID(CHANNEL_ID),
+    .USERPORTS_DISABLE(1),
+    .DCFILTER_DISABLE(1),
+    .IQCORRECTION_DISABLE(1)
   ) i_up_adc_channel (
     .adc_clk (adc_clk),
     .adc_rst (adc_rst),

@@ -132,7 +132,10 @@ module axi_dac_jesd204_core #(
   // dac common processor interface
 
   up_dac_common #(
-    .ID(ID)
+    .ID(ID),
+    .DRP_DISABLE(1),
+    .USERPORTS_DISABLE(1),
+    .GPIO_DISABLE(1)
   ) i_up_dac_common (
     .mmcm_rst (),
     .dac_clk (dac_clk),

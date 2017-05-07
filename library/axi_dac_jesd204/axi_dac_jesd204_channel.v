@@ -189,7 +189,9 @@ module axi_dac_jesd204_channel #(
   // single channel processor
 
   up_dac_channel #(
-    .CHANNEL_ID(CHANNEL_ID)
+    .CHANNEL_ID(CHANNEL_ID),
+    .USERPORTS_DISABLE(1),
+    .IQCORRECTION_DISABLE(1)
   ) i_up_dac_channel (
     .dac_clk (dac_clk),
     .dac_rst (dac_rst),

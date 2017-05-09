@@ -49,7 +49,6 @@ module axi_adc_jesd204_pnmon #(
 
 
   reg     [DW:0]  adc_pn_data_pn = 'd0;
-  reg     [DW:0]  adc_pn_data_in = 'd0;
 
   // internal signals
 
@@ -63,7 +62,7 @@ module axi_adc_jesd204_pnmon #(
 
   // pn sequence select
 
-  assign adc_pn_data_pn_s = (adc_pn_oos == 1'b1) ? adc_pn_data_in : adc_pn_data_pn;
+  assign adc_pn_data_pn_s = (adc_pn_oos == 1'b1) ? adc_pn_data_in_s : adc_pn_data_pn;
 
   wire tc = TWOS_COMPLEMENT ? 1'b1 : 1'b0;
 
@@ -89,7 +88,6 @@ module axi_adc_jesd204_pnmon #(
   assign full_state_pn9 = {adc_pn_data_pn_s[8:0],pn9};
 
   always @(posedge adc_clk) begin
-    adc_pn_data_in <= adc_pn_data_in_s;
     if (adc_pnseq_sel == 4'd0) begin
       adc_pn_data_pn <= pn9;
     end else begin
@@ -104,7 +102,7 @@ module axi_adc_jesd204_pnmon #(
   ) i_pnmon (
     .adc_clk (adc_clk),
     .adc_valid_in (1'b1),
-    .adc_data_in (adc_pn_data_in),
+    .adc_data_in (adc_pn_data_in_s),
     .adc_data_pn (adc_pn_data_pn),
     .adc_pn_oos (adc_pn_oos),
     .adc_pn_err (adc_pn_err)

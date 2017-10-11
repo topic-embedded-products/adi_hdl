@@ -170,22 +170,22 @@ set_property -dict [list \
 	[ipx::get_user_parameters DMA_LENGTH_WIDTH -of_objects $cc]
 
 foreach {k v} { \
-		"ASYNC_CLK_REQ_SRC" "true" \
-		"ASYNC_CLK_SRC_DEST" "true" \
-		"ASYNC_CLK_DEST_REQ" "true" \
-		"CYCLIC" "false" \
-		"DMA_2D_TRANSFER" "false" \
-		"SYNC_TRANSFER_START" "false" \
-		"AXI_SLICE_SRC" "false" \
-		"AXI_SLICE_DEST" "false" \
+		"ASYNC_CLK_REQ_SRC" "1" \
+		"ASYNC_CLK_SRC_DEST" "1" \
+		"ASYNC_CLK_DEST_REQ" "1" \
+		"CYCLIC" "0" \
+		"DMA_2D_TRANSFER" "0" \
+		"SYNC_TRANSFER_START" "0" \
+		"AXI_SLICE_SRC" "0" \
+		"AXI_SLICE_DEST" "0" \
 	} { \
 	set_property -dict [list \
-			"value_format" "bool" \
+			"value_format" "long" \
 			"value" $v \
 		] \
 		[ipx::get_user_parameters $k -of_objects $cc]
 	set_property -dict [list \
-			"value_format" "bool" \
+			"value_format" "long" \
 			"value" $v \
 		] \
 		[ipx::get_hdl_parameters $k -of_objects $cc]
